@@ -1,0 +1,3 @@
+[submodule "factplusplus"]
+	path = factplusplus
+	url = https://bitbucket.org/dtsarkov/factplusplus.git

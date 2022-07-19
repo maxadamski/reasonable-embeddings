@@ -1,0 +1,147 @@
+Prefix(:=<http://www.demcare.eu/ontologies/exchangemodel-merged.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.demcare.eu/ontologies/exchangemodel-merged.owl>
+
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#AtomicActivity>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#ComplexActivity>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#Entity>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#Event>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#Measurement>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#ObjectEvent>))
+Declaration(Class(<http://www.demcare.eu/ontologies/event.owl#Person>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Accelerometer>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Alert>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Ambient2DVideoCamera>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#DTI-2>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Detection>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Feedback>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableMicrophone>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableVideoCamera>))
+Declaration(Class(<http://www.demcare.eu/ontologies/exchangemodel.owl#_3DVideoCamera>))
+Declaration(Class(<http://www.demcare.eu/ontologies/home.owl#DaySummary>))
+Declaration(Class(<http://www.demcare.eu/ontologies/home.owl#Problem>))
+Declaration(Class(<http://www.demcare.eu/ontologies/home.owl#Questionnaire>))
+Declaration(Class(<http://www.demcare.eu/ontologies/lab.owl#ClinicalRecord>))
+Declaration(Class(<http://www.demcare.eu/ontologies/lab.owl#DemographicCharacteristicsRecord>))
+Declaration(Class(<http://www.w3.org/2006/time#Instant>))
+Declaration(ObjectProperty(<http://www.demcare.eu/ontologies/exchangemodel.owl#attachedTo>))
+Declaration(ObjectProperty(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes>))
+Declaration(ObjectProperty(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime>))
+Declaration(ObjectProperty(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy>))
+Declaration(DataProperty(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric>))
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Accelerometer> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Accelerometer>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Accelerometer> <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Alert> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Alert>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Alert> <http://www.demcare.eu/ontologies/exchangemodel.owl#Feedback>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Ambient2DVideoCamera> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Ambient2DVideoCamera>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Ambient2DVideoCamera> <http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#DTI-2> (<http://www.demcare.eu/ontologies/exchangemodel.owl#DTI-2>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#DTI-2> <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Detection> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Detection>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Detection> <http://www.demcare.eu/ontologies/exchangemodel.owl#Observation>)
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Detection> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#AtomicActivity> <http://www.demcare.eu/ontologies/event.owl#ObjectEvent>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Detection> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent>))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor> (<http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor> <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement> <http://www.demcare.eu/ontologies/exchangemodel.owl#Observation>)
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> <http://www.demcare.eu/ontologies/event.owl#Measurement>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Measurement> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> <http://www.demcare.eu/ontologies/event.owl#Event>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent> <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#describes> <http://www.demcare.eu/ontologies/event.owl#Event>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent> <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> DataAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Observation> DataExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition> <http://www.demcare.eu/ontologies/exchangemodel.owl#Observation>)
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> <http://www.demcare.eu/ontologies/event.owl#ComplexActivity>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Recognition> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent>)))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Report> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Report>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> ObjectUnionOf(<http://www.demcare.eu/ontologies/home.owl#Questionnaire> <http://www.demcare.eu/ontologies/lab.owl#ClinicalRecord> <http://www.demcare.eu/ontologies/lab.owl#DemographicCharacteristicsRecord>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> <http://www.demcare.eu/ontologies/event.owl#Person>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#describes> ObjectUnionOf(<http://www.demcare.eu/ontologies/home.owl#Questionnaire> <http://www.demcare.eu/ontologies/lab.owl#ClinicalRecord> <http://www.demcare.eu/ontologies/lab.owl#DemographicCharacteristicsRecord>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> <http://www.demcare.eu/ontologies/event.owl#Person>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> DataAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Report> DataExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Result> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Result>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#describes> ObjectUnionOf(<http://www.demcare.eu/ontologies/home.owl#DaySummary> <http://www.demcare.eu/ontologies/home.owl#Problem>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#describes> ObjectUnionOf(<http://www.demcare.eu/ontologies/home.owl#DaySummary> <http://www.demcare.eu/ontologies/home.owl#Problem>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasReportingTime> <http://www.w3.org/2006/time#Instant>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#providedBy> ObjectUnionOf(<http://www.demcare.eu/ontologies/event.owl#Person> <http://www.demcare.eu/ontologies/exchangemodel.owl#ProcessingComponent>)))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> DataAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Result> DataExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#hasPlausibilityMetric> xsd:double))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor> (<http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor> ObjectAllValuesFrom(<http://www.demcare.eu/ontologies/exchangemodel.owl#attachedTo> <http://www.demcare.eu/ontologies/event.owl#Entity>))
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor> ObjectExactCardinality(1 <http://www.demcare.eu/ontologies/exchangemodel.owl#attachedTo> <http://www.demcare.eu/ontologies/event.owl#Entity>))
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableMicrophone> (<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableMicrophone>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableMicrophone> <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor> (<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor> <http://www.demcare.eu/ontologies/exchangemodel.owl#Sensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableVideoCamera> (<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableVideoCamera>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#WearableVideoCamera> <http://www.demcare.eu/ontologies/exchangemodel.owl#WearableSensor>)
+
+# Class: <http://www.demcare.eu/ontologies/exchangemodel.owl#_3DVideoCamera> (<http://www.demcare.eu/ontologies/exchangemodel.owl#_3DVideoCamera>)
+
+SubClassOf(<http://www.demcare.eu/ontologies/exchangemodel.owl#_3DVideoCamera> <http://www.demcare.eu/ontologies/exchangemodel.owl#FixedSensor>)
+
+
+)

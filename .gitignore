@@ -1,0 +1,12 @@
+build/
+src/simplefact/factpp.so
+src/simplefact/owlfun.so
+__pycache__/
+.ipynb_checkpoints/
+
+!local/
+local/*
+!local/out
+local/out/*
+!local/out/dataset
+!local/out/img

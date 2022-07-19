@@ -1,0 +1,62 @@
+#!/bin/bash
+
+function panic { echo $1; exit 1; }
+
+PARALLEL=true
+CC="gcc"
+CXX="g++"
+
+for cmd in cython $CC $CXX; do
+	command -v "$cmd" &>/dev/null || panic "fatal error: $cmd is not installed"
+done
+
+PYTHON_HEADERS="${CONDA_PREFIX:-/usr}/include/python3.9"
+FACTPP_HEADERS="factplusplus/Kernel"
+
+CFLAGS="-O2 -Wall -Wextra -fPIC -ffast-math -pipe -march=native -I$FACTPP_HEADERS"
+CPYFLAGS="$CFLAGS -shared -pthread -fwrapv -fstack-clash-protection -fno-strict-aliasing -I$PYTHON_HEADERS"
+CXX="$CXX --std=c++11"
+
+[ -f "$PYTHON_HEADERS/Python.h" ] || panic "fatal error: Python headers not found in $PYTHON_HEADERS (activate a conda environment with Python headers installed, or set the header path manually by setting PYTHON_HEADERS in this script)"
+[ -d factplusplus/Kernel ] || panic "fatal error: factplusplus repository is empty (clone the submodule)"
+
+mkdir -p build/kernel
+
+if [ src/simplefact/factpp.pyx -nt build/factpp.cpp ]; then
+	echo "cythonize src/simplefact/factpp.pyx"
+	cython --cplus -3 src/simplefact/factpp.pyx -o build/factpp.cpp
+fi
+
+if [ src/simplefact/owlfun.pyx -nt build/owlfun.c ]; then
+	echo "cythonize src/simplefact/owlfun.pyx"
+	cython -3 src/simplefact/owlfun.pyx -o build/owlfun.c
+fi
+
+for c in factplusplus/Kernel/*.cpp; do
+	o="build/kernel/$(basename "$c" .cpp).o"
+	if [ "$c" -nt "$o" ]; then
+		echo "build $c"
+		$CXX $CFLAGS -c -o "$o" "$c" &
+		[ "$PARALLEL" = true ] || wait
+	fi
+done
+
+if [ build/factpp.cpp -nt build/factpp.o ]; then
+	echo "build build/factpp.cpp"
+	# -Wp,-w silences the ("unlikely" redefined) preprocessor warning
+	$CXX $CPYFLAGS -Wp,-w -o build/factpp.o build/factpp.cpp &
+fi
+
+if [ build/owlfun.c -nt build/owlfun.o ]; then
+	echo "build build/owlfun.c"
+	$CC $CPYFLAGS -o build/owlfun.o build/owlfun.c &
+fi
+
+wait
+
+echo "link src/simplefact/factpp.so"
+$CXX $CPYFLAGS -o src/simplefact/factpp.so build/factpp.o build/kernel/*.o
+
+echo "link src/simplefact/owlfun.so"
+$CC $CPYFLAGS -o src/simplefact/owlfun.so build/owlfun.o
+

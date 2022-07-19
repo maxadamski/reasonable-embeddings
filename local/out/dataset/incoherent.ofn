@@ -1,0 +1,7 @@
+Prefix(:=<http://example.com/random#>)
+Ontology(<http://example.com/random#>
+Declaration(Class(:A))
+Declaration(Class(:B))
+SubClassOf(:A :B)
+SubClassOf(:A ObjectComplementOf(:B))
+)

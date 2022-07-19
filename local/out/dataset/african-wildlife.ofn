@@ -1,0 +1,237 @@
+Prefix(:=<xml:base#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(owl2:=<http://www.w3.org/2006/12/owl2#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(owl2xml:=<http://www.w3.org/2006/12/owl2-xml#>)
+Prefix(AfricanWildlifeOntology1:=<http://www.meteck.org/teaching/ontologies/AfricanWildlifeOntology1.owl#>)
+
+
+Ontology(<http://www.meteck.org/teaching/ontologies/AfricanWildlifeOntology1.owl>
+Annotation(rdfs:comment "African Wildlide Ontology, Semantic Web Primer, 4.3.1 pages 119-133")
+Annotation(rdfs:comment "AfricanWildlifeOntology0.owl was then modified by Maria Keet (classes and object properties added, more comments added, updated the uri etc) and renamed into AfricanWildlifeOntology1.owl. 
+This is still an ontology just for tutorial purposes, so take it with a grain of salt")
+Annotation(rdfs:comment "MK downloaded this file from http://www.iro.umontreal.ca/~lapalme/ift6281/OWL/AfricanWildlifeOntology.xml, changed the extension to .owl and appended the name with Web. That ontology give a load error in protege due to the use of Collection in the definition of Herbivore, so the AfricanWildlifeOntology0.owl has that piece removed.")
+
+Declaration(Class(AfricanWildlifeOntology1:Berry))
+Declaration(Class(AfricanWildlifeOntology1:CarnivorousPlant))
+Declaration(Class(AfricanWildlifeOntology1:Elephant))
+Declaration(Class(AfricanWildlifeOntology1:FruitingBody))
+Declaration(Class(AfricanWildlifeOntology1:Grass))
+Declaration(Class(AfricanWildlifeOntology1:Impala))
+Declaration(Class(AfricanWildlifeOntology1:Omnivore))
+Declaration(Class(AfricanWildlifeOntology1:Palmtree))
+Declaration(Class(AfricanWildlifeOntology1:Phloem))
+Declaration(Class(AfricanWildlifeOntology1:PlantParts))
+Declaration(Class(AfricanWildlifeOntology1:RockDassie))
+Declaration(Class(AfricanWildlifeOntology1:Root))
+Declaration(Class(AfricanWildlifeOntology1:Stem))
+Declaration(Class(AfricanWildlifeOntology1:Twig))
+Declaration(Class(AfricanWildlifeOntology1:Warthog))
+Declaration(Class(AfricanWildlifeOntology1:Xylem))
+Declaration(Class(AfricanWildlifeOntology1:animal))
+Declaration(Class(AfricanWildlifeOntology1:branch))
+Declaration(Class(AfricanWildlifeOntology1:carnivore))
+Declaration(Class(AfricanWildlifeOntology1:giraffe))
+Declaration(Class(AfricanWildlifeOntology1:herbivore))
+Declaration(Class(AfricanWildlifeOntology1:leaf))
+Declaration(Class(AfricanWildlifeOntology1:lion))
+Declaration(Class(AfricanWildlifeOntology1:plant))
+Declaration(Class(AfricanWildlifeOntology1:tasty-plant))
+Declaration(Class(AfricanWildlifeOntology1:tree))
+Declaration(Class(owl:Thing))
+Declaration(Class(:Apple))
+Declaration(Class(:Distribution))
+Declaration(Class(:Habitat))
+Declaration(Class(:Parsnip))
+Declaration(ObjectProperty(AfricanWildlifeOntology1:eaten-by))
+Declaration(ObjectProperty(AfricanWildlifeOntology1:eats))
+Declaration(ObjectProperty(AfricanWildlifeOntology1:has-part))
+Declaration(ObjectProperty(AfricanWildlifeOntology1:is-part-of))
+Declaration(ObjectProperty(AfricanWildlifeOntology1:is-proper-part-of))
+Declaration(AnnotationProperty(rdfs:comment))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: AfricanWildlifeOntology1:eaten-by (AfricanWildlifeOntology1:eaten-by)
+
+InverseObjectProperties(AfricanWildlifeOntology1:eaten-by AfricanWildlifeOntology1:eats)
+
+# Object Property: AfricanWildlifeOntology1:eats (AfricanWildlifeOntology1:eats)
+
+ObjectPropertyRange(AfricanWildlifeOntology1:eats ObjectUnionOf(AfricanWildlifeOntology1:animal AfricanWildlifeOntology1:plant ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:animal) ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:plant)))
+
+# Object Property: AfricanWildlifeOntology1:has-part (AfricanWildlifeOntology1:has-part)
+
+InverseObjectProperties(AfricanWildlifeOntology1:has-part AfricanWildlifeOntology1:is-part-of)
+TransitiveObjectProperty(AfricanWildlifeOntology1:has-part)
+
+# Object Property: AfricanWildlifeOntology1:is-part-of (AfricanWildlifeOntology1:is-part-of)
+
+TransitiveObjectProperty(AfricanWildlifeOntology1:is-part-of)
+ReflexiveObjectProperty(AfricanWildlifeOntology1:is-part-of)
+
+# Object Property: AfricanWildlifeOntology1:is-proper-part-of (AfricanWildlifeOntology1:is-proper-part-of)
+
+SubObjectPropertyOf(AfricanWildlifeOntology1:is-proper-part-of AfricanWildlifeOntology1:is-part-of)
+IrreflexiveObjectProperty(AfricanWildlifeOntology1:is-proper-part-of)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: AfricanWildlifeOntology1:Berry (AfricanWildlifeOntology1:Berry)
+
+SubClassOf(AfricanWildlifeOntology1:Berry AfricanWildlifeOntology1:FruitingBody)
+
+# Class: AfricanWildlifeOntology1:CarnivorousPlant (AfricanWildlifeOntology1:CarnivorousPlant)
+
+SubClassOf(AfricanWildlifeOntology1:CarnivorousPlant AfricanWildlifeOntology1:plant)
+SubClassOf(AfricanWildlifeOntology1:CarnivorousPlant ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:animal))
+
+# Class: AfricanWildlifeOntology1:Elephant (AfricanWildlifeOntology1:Elephant)
+
+SubClassOf(AfricanWildlifeOntology1:Elephant AfricanWildlifeOntology1:herbivore)
+
+# Class: AfricanWildlifeOntology1:FruitingBody (AfricanWildlifeOntology1:FruitingBody)
+
+SubClassOf(AfricanWildlifeOntology1:FruitingBody AfricanWildlifeOntology1:PlantParts)
+
+# Class: AfricanWildlifeOntology1:Grass (AfricanWildlifeOntology1:Grass)
+
+SubClassOf(AfricanWildlifeOntology1:Grass AfricanWildlifeOntology1:plant)
+
+# Class: AfricanWildlifeOntology1:Impala (AfricanWildlifeOntology1:Impala)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:Impala "An african antelope http://en.wikipedia.org/wiki/Impala")
+SubClassOf(AfricanWildlifeOntology1:Impala AfricanWildlifeOntology1:animal)
+
+# Class: AfricanWildlifeOntology1:Omnivore (AfricanWildlifeOntology1:Omnivore)
+
+EquivalentClasses(AfricanWildlifeOntology1:Omnivore ObjectIntersectionOf(ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:animal) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:plant) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats ObjectUnionOf(ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:animal) ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:plant)))))
+SubClassOf(AfricanWildlifeOntology1:Omnivore AfricanWildlifeOntology1:animal)
+DisjointClasses(AfricanWildlifeOntology1:Omnivore AfricanWildlifeOntology1:carnivore)
+DisjointClasses(AfricanWildlifeOntology1:Omnivore AfricanWildlifeOntology1:herbivore)
+
+# Class: AfricanWildlifeOntology1:Palmtree (AfricanWildlifeOntology1:Palmtree)
+
+SubClassOf(AfricanWildlifeOntology1:Palmtree AfricanWildlifeOntology1:plant)
+SubClassOf(AfricanWildlifeOntology1:Palmtree ObjectSomeValuesFrom(AfricanWildlifeOntology1:has-part ObjectComplementOf(AfricanWildlifeOntology1:branch)))
+DisjointClasses(AfricanWildlifeOntology1:Palmtree AfricanWildlifeOntology1:tree)
+
+# Class: AfricanWildlifeOntology1:Phloem (AfricanWildlifeOntology1:Phloem)
+
+SubClassOf(AfricanWildlifeOntology1:Phloem AfricanWildlifeOntology1:PlantParts)
+SubClassOf(AfricanWildlifeOntology1:Phloem ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-proper-part-of AfricanWildlifeOntology1:Stem))
+
+# Class: AfricanWildlifeOntology1:PlantParts (AfricanWildlifeOntology1:PlantParts)
+
+SubClassOf(AfricanWildlifeOntology1:PlantParts owl:Thing)
+SubClassOf(AfricanWildlifeOntology1:PlantParts ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-proper-part-of AfricanWildlifeOntology1:plant))
+
+# Class: AfricanWildlifeOntology1:RockDassie (AfricanWildlifeOntology1:RockDassie)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:RockDassie "They eat grasses and broad-leafed plants")
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:RockDassie "http://en.wikipedia.org/wiki/Rock_Hyrax")
+SubClassOf(AfricanWildlifeOntology1:RockDassie AfricanWildlifeOntology1:animal)
+
+# Class: AfricanWildlifeOntology1:Root (AfricanWildlifeOntology1:Root)
+
+SubClassOf(AfricanWildlifeOntology1:Root AfricanWildlifeOntology1:PlantParts)
+
+# Class: AfricanWildlifeOntology1:Stem (AfricanWildlifeOntology1:Stem)
+
+SubClassOf(AfricanWildlifeOntology1:Stem AfricanWildlifeOntology1:PlantParts)
+
+# Class: AfricanWildlifeOntology1:Twig (AfricanWildlifeOntology1:Twig)
+
+SubClassOf(AfricanWildlifeOntology1:Twig AfricanWildlifeOntology1:PlantParts)
+
+# Class: AfricanWildlifeOntology1:Warthog (AfricanWildlifeOntology1:Warthog)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:Warthog "Warthogs are Omnivorous http://en.wikipedia.org/wiki/Warthog")
+SubClassOf(AfricanWildlifeOntology1:Warthog AfricanWildlifeOntology1:animal)
+SubClassOf(AfricanWildlifeOntology1:Warthog ObjectIntersectionOf(ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:FruitingBody) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:Grass) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:Root) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:animal)))
+
+# Class: AfricanWildlifeOntology1:Xylem (AfricanWildlifeOntology1:Xylem)
+
+SubClassOf(AfricanWildlifeOntology1:Xylem AfricanWildlifeOntology1:PlantParts)
+SubClassOf(AfricanWildlifeOntology1:Xylem ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-proper-part-of AfricanWildlifeOntology1:Stem))
+
+# Class: AfricanWildlifeOntology1:animal (AfricanWildlifeOntology1:animal)
+
+DisjointClasses(AfricanWildlifeOntology1:animal AfricanWildlifeOntology1:plant)
+
+# Class: AfricanWildlifeOntology1:branch (AfricanWildlifeOntology1:branch)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:branch "Branches are parts of trees.")
+SubClassOf(AfricanWildlifeOntology1:branch AfricanWildlifeOntology1:PlantParts)
+SubClassOf(AfricanWildlifeOntology1:branch ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:tree))
+
+# Class: AfricanWildlifeOntology1:carnivore (AfricanWildlifeOntology1:carnivore)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:carnivore "Carnivores are exactly those animals that eat only animals.")
+EquivalentClasses(AfricanWildlifeOntology1:carnivore ObjectUnionOf(ObjectAllValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:animal) ObjectAllValuesFrom(AfricanWildlifeOntology1:eats ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:animal))))
+SubClassOf(AfricanWildlifeOntology1:carnivore AfricanWildlifeOntology1:animal)
+DisjointClasses(AfricanWildlifeOntology1:carnivore AfricanWildlifeOntology1:herbivore)
+
+# Class: AfricanWildlifeOntology1:giraffe (AfricanWildlifeOntology1:giraffe)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:giraffe "Giraffes are herbivores, and they eat only leaves.")
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:giraffe "they also eat twigs")
+SubClassOf(AfricanWildlifeOntology1:giraffe AfricanWildlifeOntology1:animal)
+SubClassOf(AfricanWildlifeOntology1:giraffe ObjectAllValuesFrom(AfricanWildlifeOntology1:eats ObjectUnionOf(AfricanWildlifeOntology1:Twig AfricanWildlifeOntology1:leaf)))
+DisjointClasses(AfricanWildlifeOntology1:giraffe AfricanWildlifeOntology1:lion)
+
+# Class: AfricanWildlifeOntology1:herbivore (AfricanWildlifeOntology1:herbivore)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:herbivore "Herbivores are exactly those animals that eat only plants or parts of plants ")
+EquivalentClasses(AfricanWildlifeOntology1:herbivore ObjectUnionOf(ObjectAllValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:plant) ObjectAllValuesFrom(AfricanWildlifeOntology1:eats ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of AfricanWildlifeOntology1:plant))))
+SubClassOf(AfricanWildlifeOntology1:herbivore AfricanWildlifeOntology1:animal)
+
+# Class: AfricanWildlifeOntology1:leaf (AfricanWildlifeOntology1:leaf)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:leaf "Leaves are parts of branches.")
+SubClassOf(AfricanWildlifeOntology1:leaf AfricanWildlifeOntology1:PlantParts)
+SubClassOf(AfricanWildlifeOntology1:leaf ObjectSomeValuesFrom(AfricanWildlifeOntology1:is-part-of ObjectUnionOf(AfricanWildlifeOntology1:Twig AfricanWildlifeOntology1:branch)))
+
+# Class: AfricanWildlifeOntology1:lion (AfricanWildlifeOntology1:lion)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:lion "Lions are animals that eat only herbivores.")
+SubClassOf(AfricanWildlifeOntology1:lion AfricanWildlifeOntology1:animal)
+SubClassOf(AfricanWildlifeOntology1:lion ObjectSomeValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:Impala))
+SubClassOf(AfricanWildlifeOntology1:lion ObjectAllValuesFrom(AfricanWildlifeOntology1:eats AfricanWildlifeOntology1:herbivore))
+
+# Class: AfricanWildlifeOntology1:plant (AfricanWildlifeOntology1:plant)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:plant "Plants are disjoint from animals.")
+
+# Class: AfricanWildlifeOntology1:tasty-plant (AfricanWildlifeOntology1:tasty-plant)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:tasty-plant "Plants eaten both by herbivores and carnivores")
+SubClassOf(AfricanWildlifeOntology1:tasty-plant AfricanWildlifeOntology1:plant)
+SubClassOf(AfricanWildlifeOntology1:tasty-plant ObjectIntersectionOf(ObjectSomeValuesFrom(AfricanWildlifeOntology1:eaten-by AfricanWildlifeOntology1:carnivore) ObjectSomeValuesFrom(AfricanWildlifeOntology1:eaten-by AfricanWildlifeOntology1:herbivore)))
+
+# Class: AfricanWildlifeOntology1:tree (AfricanWildlifeOntology1:tree)
+
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:tree "'plant' is here a shorthand for plant kingdom")
+AnnotationAssertion(rdfs:comment AfricanWildlifeOntology1:tree "Trees are a type of plant.")
+SubClassOf(AfricanWildlifeOntology1:tree AfricanWildlifeOntology1:plant)
+
+# Class: :Apple (:Apple)
+
+SubClassOf(:Apple AfricanWildlifeOntology1:FruitingBody)
+
+# Class: :Parsnip (:Parsnip)
+
+SubClassOf(:Parsnip AfricanWildlifeOntology1:Root)
+
+
+DisjointClasses(AfricanWildlifeOntology1:Twig AfricanWildlifeOntology1:branch AfricanWildlifeOntology1:leaf)
+)
