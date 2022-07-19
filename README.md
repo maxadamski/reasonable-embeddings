@@ -73,7 +73,7 @@ Install the requirements.
 pip install -r requirements.txt
 ```
 
-With the requirements in place, run the build script for the FaCT++ reasoner and our Python bindings. Of course, you will need to clone the factplusplus repository into the `factplusplus/` directory, if you haven't done so already.
+With the requirements in place, run the build script for the FaCT++ reasoner and our Python bindings. Of course, you will need to clone the factplusplus submodule repository into the `factplusplus/` directory, if you haven't done so already (only required if you cloned our repository from Github and didn't use the `--recurse-submodules` flag).
 
 ```
 chmod +x scripts/build
