@@ -1,10 +1,19 @@
-# Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner
+<div align="center"><img src="/local/out/img/demo.png" width="100%"></div>
 
-![Concept embedding demo](/local/out/img/demo.png)
+**[Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner](#link-to-paper)**
+<br/>
+[Max Adamski](https://maxadamski.com), [Jędrzej Potoniec](https://scholar.google.pl/citations?user=Z-hEFe0AAAAJ&hl=pl)
+<br/>
+[[Paper]](#link-to-paper)
+[[BibTex]](#link-to-bibtex)
+
+```
+Space reserved for bibtex entry
+```
 
 ## Overview
 
-![Reasoner architecture overview](/local/out/img/reasoner.png)
+<div align="center"><img src="/local/out/img/reasoner.png" width="75%" alt="Reasoner architecture overview"></div>
 
 Reason-able concept embeddings are learned in a data-driven way, by simply asking entailment queries for a given knowledge base.
 
@@ -16,7 +25,7 @@ Hopefully, reason-able concept embeddings and deep neural reasoners will allow f
 
 ## Repository structure
 
-Notable files in this repository are described below.
+Notable files in this repository are described below. In parentheses, we indicate if a figure, table, or experiment was based on a given file.
 
 ```
 reasonable-embeddings/
@@ -78,8 +87,4 @@ jupyter notebook
 ```
 
 To re-run an experiment open a Jupyter notebook in a web browser and click `Restart & Run All`. Results of experiments are shown in notebooks. In addition to that, some experiments save results (including model weights) on disk in a directory based on the time stamp (for example, `local/out/exp/20220715T194304` stores the result of exp2.ipynb).
-
-## Credits
-
-Max Adamski, Jędrzej Potoniec
 
