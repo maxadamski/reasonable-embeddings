@@ -13,7 +13,7 @@ Space reserved for bibtex entry
 
 ## Overview
 
-<div align="center"><img src="/local/out/img/reasoner.png" width="75%" alt="Reasoner architecture overview"></div>
+<div align="center"><img src="/local/out/img/reasoner.png" width="80%" alt="Reasoner architecture overview"></div>
 
 Reason-able concept embeddings are learned in a data-driven way, by simply asking entailment queries for a given knowledge base.
 
@@ -53,7 +53,7 @@ reasonable-embeddings/
    └─ exp/
       ├─ 20220715T194328/ # Artifacts of exp1.ipynb
       ├─ 20220715T194304/ # Artifacts of exp2.ipynb
-      └─ 20220715T202153/ # Artifacts of exp5.ipynb
+      └─ 20220719T213232/ # Artifacts of exp5.ipynb
 ```
 
 ## How to run
