@@ -1,10 +1,10 @@
 <div align="center"><img src="/local/out/img/demo.png" width="100%"></div>
 
-**[Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner](#link-to-paper)**
+**[Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner](http://www.semantic-web-journal.net/content/reason-able-embeddings-learning-concept-embeddings-transferable-deep-neural-reasoner)**
 <br/>
 [Max Adamski](https://maxadamski.com), [Jędrzej Potoniec](https://scholar.google.pl/citations?user=Z-hEFe0AAAAJ&hl=pl)
 <br/>
-[[Paper]](#link-to-paper)
+[[Paper]](http://www.semantic-web-journal.net/content/reason-able-embeddings-learning-concept-embeddings-transferable-deep-neural-reasoner)
 [[BibTex]](#link-to-bibtex)
 
 ```
