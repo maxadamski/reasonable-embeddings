@@ -37,12 +37,13 @@ reasonable-embeddings/
 │  │  ├─ factpp.pyx  # Python bindings to the FaCT++ reasoner
 │  │  ├─ owlfun.pyx  # OWL functional style syntax parser
 │  │  └─ syntax.py   # Constants used to construct concept expressions
-│  ├─ exp1.ipynb  # Training the relaxed reasoner on the synthetic data set (Fig. 4, Table 3)
-│  ├─ exp2.ipynb  # Training the restricted reasoner on the synthetic data set (Fig. 3, Table 2)
+│  ├─ exp1.ipynb  # Training the relaxed reasoner on the synthetic data set (Fig. 4, Table 4)
+│  ├─ exp2.ipynb  # Training the restricted reasoner on the synthetic data set (Fig. 3, Table 2, 3)
 │  ├─ exp3.ipynb  # Training the restricted reasoner on the pizza taxonomy
-│  ├─ exp4.ipynb  # Learning and visualizing embeddings of arbitrary concepts in the pizza ontology (Fig. 5, Table 5)
-│  ├─ exp5.ipynb  # Evaluating reasoner head transfer from sythetic data to real-world ontologies (Table 6, 8)
-│  ├─ tests.ipynb # Results of statistical tests (Table 4, 7)
+│  ├─ exp4.ipynb  # Learning and visualizing embeddings of arbitrary concepts in the pizza ontology (Fig. 5, Table 6)
+│  ├─ exp5.ipynb  # Evaluating reasoner head transfer from sythetic data to real-world ontologies (Table 7, 10)
+│  ├─ extra.ipynb # Finding axioms that are hard for the reasoner (Table 9)
+│  ├─ tests.ipynb # Results of statistical tests (Table 5, 8)
 │  ├─ reasoner.py # Implementation of the relaxed reasoner and the training procedure
 │  └─ generate.py # Axiom generator, synthetic data set generator, and data set loading and saving procedures
 └─ local/out/
@@ -53,7 +54,9 @@ reasonable-embeddings/
    └─ exp/
       ├─ 20220715T194328/ # Artifacts of exp1.ipynb
       ├─ 20220715T194304/ # Artifacts of exp2.ipynb
-      └─ 20220719T213232/ # Artifacts of exp5.ipynb
+      ├─ 20220719T213232/ # Artifacts of exp5.ipynb
+      └─ table3-k...e../     # Artifacts of exp2.ipynb, with a set embedding size,
+                          # and number of neurons in the reasoner head
 ```
 
 ## How to run
