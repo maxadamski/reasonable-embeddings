@@ -55,7 +55,7 @@ reasonable-embeddings/
       ├─ 20220715T194328/ # Artifacts of exp1.ipynb
       ├─ 20220715T194304/ # Artifacts of exp2.ipynb
       ├─ 20220719T213232/ # Artifacts of exp5.ipynb
-      └─ table3-k...e../     # Artifacts of exp2.ipynb, with a set embedding size,
+      └─ table3-k...e../  # Artifacts of exp2.ipynb, with a set embedding size,
                           # and number of neurons in the reasoner head
 ```
 
