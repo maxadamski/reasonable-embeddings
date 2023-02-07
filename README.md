@@ -1,10 +1,10 @@
 <div align="center"><img src="/local/out/img/demo.png" width="100%"></div>
 
-**[Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner](#link-to-paper)**
+**[Reason-able Embeddings: Learning Concept Embeddings with a Transferable Deep Neural Reasoner](http://www.semantic-web-journal.net/content/reason-able-embeddings-learning-concept-embeddings-transferable-deep-neural-reasoner)**
 <br/>
 [Max Adamski](https://maxadamski.com), [Jędrzej Potoniec](https://scholar.google.pl/citations?user=Z-hEFe0AAAAJ&hl=pl)
 <br/>
-[[Paper]](#link-to-paper)
+[[Paper]](http://www.semantic-web-journal.net/content/reason-able-embeddings-learning-concept-embeddings-transferable-deep-neural-reasoner)
 [[BibTex]](#link-to-bibtex)
 
 ```
@@ -15,9 +15,9 @@ Space reserved for bibtex entry
 
 <div align="center"><img src="/local/out/img/reasoner.png" width="80%" alt="Reasoner architecture overview"></div>
 
-Reason-able concept embeddings are learned in a data-driven way, by simply asking entailment queries for a given knowledge base.
+Reason-able concept embeddings are learned in a data-driven way, by simply asking queries about logical consequences for a given knowledge base.
 
-Our method uses an entailment classifier based on a recursive deep neural network, so after learning embeddings, one can both construct embeddings of arbitrarily complex concepts, and use the resulting classifier to perform fast approximate reasoning.
+Our method uses a logical consequence (entailment) classifier based on a recursive deep neural network, so after learning embeddings, one can both construct embeddings of arbitrarily complex concepts, and use the resulting classifier to perform fast approximate reasoning.
 
 A significant part of our reasoner (the reasoner head) is transferable across knowledge bases in the ALC description logic, including real-world knowledge bases.
 
